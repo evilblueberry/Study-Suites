@@ -3,6 +3,8 @@ import { requireUser } from "@/lib/auth";
 import { prisma } from "@/lib/prisma";
 import { processSuite } from "@/services/suiteProcessor";
 
+export const dynamic = "force-dynamic";
+
 /**
  * POST /api/suites/[id]/regenerate
  *
