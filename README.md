@@ -28,11 +28,11 @@ A full-stack, collaborative exam-prep platform that turns uploaded class materia
 
 ### 2. Supabase Setup (Database & Storage)
 1. Go to [Supabase](https://supabase.com) and create a free project.
-2. **Database**:
-   - Go to Project Settings -> Database.
-   - Copy the **Transaction** connection string to `DATABASE_URL` in `.env.local`.
-   - Copy the **Session** connection string to `DIRECT_URL` in `.env.local`.
-   - Append `?pgbouncer=true` to the `DATABASE_URL` (but not the `DIRECT_URL`).
+3. **Database**:
+   - Click the **"Connect"** button at the top right of your Supabase dashboard.
+   - Select the **"ORMs"** tab, then select **"Prisma"**.
+   - Copy the **Transaction Connection** string (port 6543) to `DATABASE_URL` in `.env.local`.
+   - Copy the **Session Connection** string (port 5432) to `DIRECT_URL` in `.env.local`.
 3. **Storage**:
    - Go to the **SQL Editor** in Supabase and run the script located in `supabase/init.sql`.
    - This creates a public bucket called `study-materials` with a 50MB limit and restricts access so only your backend (using the service key) can upload/delete files.
