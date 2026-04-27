@@ -94,9 +94,12 @@ export async function POST(
       data: uploadedFiles,
       message: `${uploadedFiles.length} file(s) uploaded. AI generation started.`,
     });
-  } catch (err: unknown) {
+  } catch (err: any) {
     console.error("[POST /api/suites/[id]/files]", err);
-    return NextResponse.json({ error: "Upload failed" }, { status: 500 });
+    return NextResponse.json(
+      { error: err.message || "Upload failed" },
+      { status: 500 }
+    );
   }
 }
 
